@@ -7,7 +7,7 @@ interface SharedOpts {
   extractErrors?: boolean;
 }
 
-export type ModuleFormat = 'cjs' | 'umd' | 'esm' | 'system';
+export type ModuleFormat = 'cjs' | 'umd' | 'esm' | 'system' | 'amd';
 
 export interface BuildOpts extends SharedOpts {
   name?: string;

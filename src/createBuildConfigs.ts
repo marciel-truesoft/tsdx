@@ -85,5 +85,17 @@ function createAllFormats(
       env: 'production',
       input,
     },
+    opts.format.includes('amd') && {
+      ...opts,
+      format: 'amd',
+      env: 'development',
+      input,
+    },
+    opts.format.includes('amd') && {
+      ...opts,
+      format: 'amd',
+      env: 'production',
+      input,
+    },
   ].filter(Boolean) as [TsdxOptions, ...TsdxOptions[]];
 }

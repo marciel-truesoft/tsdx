@@ -18,7 +18,7 @@ describe('tsdx build :: options', () => {
 
   it('should compile all formats', () => {
     const output = execWithCache(
-      'node ../dist/index.js build --format cjs,esm,umd,system'
+      'node ../dist/index.js build --format cjs,esm,umd,system,amd'
     );
 
     expect(shell.test('-f', 'dist/index.js')).toBeTruthy();
@@ -40,6 +40,12 @@ describe('tsdx build :: options', () => {
     ).toBeTruthy();
     expect(
       shell.test('-f', 'dist/build-default.system.production.min.js')
+    ).toBeTruthy();
+    expect(
+      shell.test('-f', 'dist/build-default.amd.development.js')
+    ).toBeTruthy();
+    expect(
+      shell.test('-f', 'dist/build-default.amd.production.min.js')
     ).toBeTruthy();
 
     expect(shell.test('-f', 'dist/index.d.ts')).toBeTruthy();
